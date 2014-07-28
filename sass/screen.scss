@@ -60,17 +60,18 @@ body {
   background: white;
 }
 
+#content {
+	width: 578px;
+	float: left;
+}
+
 article {
 
 	padding-left: 24px;
-
-	height: 572px;
-	width: 578px;
+	padding-bottom: 20px;
 
 	line-height: 27px;
 
-	font-size: 16px;
-	font-family: Arial, "Helvetica Neue", Helvetica, San Serif;
 
 	h1 {
 		color: $froggreen;
@@ -80,12 +81,29 @@ article {
 
 		padding-bottom: 20px;
 
-
 	}
 
 	p {
-		padding-bottom: 26px;
+
+		font-family: Arial, "Helvetica Neue", Helvetica, San Serif;
+
+		padding-bottom: 20px;
+	
 	}
 
+}
+
+%quarter-col {
+	margin: 0 24px;
+	width: 267px;
+	float: left;
+}
+
+section.content-center {
+	@extend %quarter-col;
+}
+
+section.content-right {
+	@extend %quarter-col;
 }
 
