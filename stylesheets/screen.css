@@ -67,19 +67,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-decoration: none;
   font-family: Georgia;
   font-size: 14px;
-  padding: 2px;
+  padding: 0px 24px;
   line-height: 40px;
 }
+#main-nav a:hover {
+  text-decoration: underline;
+}
 
-header {
+header#top {
   background: #668134;
   font-family: Georgia;
   font-size: 72px;
-  height: 175px;
-  vertical-align: center;
+  height: 125px;
+  padding: 50px 0px 0px 25px;
+  /*content:url(http://upload.uxpin.s3.amazonaws.com/files/61422/68031/bullfrog-header.png);*/
 }
-
-header a {
+header#top .logo a {
   color: white;
   text-decoration: none;
 }
