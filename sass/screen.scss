@@ -6,6 +6,71 @@
 @import "compass/reset";
 @import "variables";
 
+
+.above-header {
+	
+	background: black;
+}
+
+#main-nav {
+	
+	a {
+		color:white;
+		text-decoration: none;
+		
+		font-family: Georgia;
+		font-size: 14px;
+
+		padding: 2px;
+		line-height: 40px;
+
+	}
+}
+
+header {
+ 	background: rgb(102, 129, 52);
+
+ 	font-family: Georgia;
+ 	font-size: 72px;
+ 	
+ 	height: 175px;
+
+ 	vertical-align: center;
+
+}
+
+header a {
+
+	color: white;
+	text-decoration: none;
+
+
+}
+
 body {
-  // background: red;
+  background: white;
+}
+
+h1 {
+	color: rgb(102, 129, 52);
+
+	font-size: 36px;
+	font-family: Georgia;
+
+	position: absolute;
+	left: 25px;
+}
+
+p {
+	position: absolute;
+	left: 25px;
+	top: 320px;
+
+	height: 572px;
+	width: 578px;
+
+	line-height: 27px;
+
+	font-size: 16px;
+	font-family: Arial;
 }
