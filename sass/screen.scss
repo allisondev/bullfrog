@@ -7,7 +7,9 @@
 @import "variables";
 
 $froggreen: #668134;
+$frogblack: #000000;
 $frogsans: Arial, "Helvetica Neue", Helvetica, San Serif;
+
 
 @mixin froglinks($color) {
 
@@ -23,16 +25,20 @@ $frogsans: Arial, "Helvetica Neue", Helvetica, San Serif;
 	}
 }
 
-h2 {
+@mixin h2 {
 	font-size: 20px;
 
 	color: $froggreen;
 	margin: 24px 0px;
 }
 
+h2 {
+	@include h2;
+}
+
 .above-header {
 	
-	background: black;
+	background: $frogblack;
 }
 
 #page {
@@ -121,13 +127,14 @@ article {
 	float: left;
 }
 
-section.content-center, section.content-right {
+section.content-center,
+section.content-right {
 	@extend %quarter-col;
 	a {
 		@include froglinks($froggreen);	
 	}
-	
 }
+
 
 section.content-center {
 	ul {
@@ -142,3 +149,28 @@ section.content-center {
 	}
 }
 
+section.content-right {
+
+	article {
+
+		p {
+			font-family: Abel;
+			font-size: 16px;
+		}
+
+		h3 {
+			@include h2;
+		}
+	}
+	
+}
+
+footer {
+	clear: both;
+	
+	background: $frogblack;
+	color: white;
+
+	padding: 20px;
+
+}

@@ -123,19 +123,22 @@ article p {
   padding-bottom: 20px;
 }
 
-section.content-center, section.content-right {
+section.content-center,
+section.content-right {
   margin: 0 24px;
   width: 267px;
   float: left;
 }
 
-section.content-center a, section.content-right a {
+section.content-center a,
+section.content-right a {
   display: block;
   color: #668134;
   text-decoration: none;
   margin-bottom: 24px;
 }
-section.content-center a:hover, section.content-right a:hover {
+section.content-center a:hover,
+section.content-right a:hover {
   text-decoration: underline;
 }
 
@@ -150,4 +153,21 @@ section.content-center ul li a {
 }
 section.content-center ul li a:hover {
   text-decoration: underline;
+}
+
+section.content-right article p {
+  font-family: Abel;
+  font-size: 16px;
+}
+section.content-right article h3 {
+  font-size: 20px;
+  color: #668134;
+  margin: 24px 0px;
+}
+
+footer {
+  clear: both;
+  background: black;
+  color: white;
+  padding: 20px;
 }
