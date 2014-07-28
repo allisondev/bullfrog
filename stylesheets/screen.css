@@ -58,6 +58,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+h2 {
+  font-size: 20px;
+  color: #668134;
+  margin: 24px 0px;
+}
+
 .above-header {
   background: black;
 }
