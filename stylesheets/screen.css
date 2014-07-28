@@ -114,7 +114,7 @@ article {
 }
 article h1 {
   color: #668134;
-  font-size: 36px;
+  font-size: 34px;
   font-family: Georgia;
   padding-bottom: 20px;
 }
@@ -127,4 +127,27 @@ section.content-center, section.content-right {
   margin: 0 24px;
   width: 267px;
   float: left;
+}
+
+section.content-center a, section.content-right a {
+  display: block;
+  color: #668134;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+section.content-center a:hover, section.content-right a:hover {
+  text-decoration: underline;
+}
+
+section.content-center ul {
+  font-family: Arial, "Helvetica Neue", Helvetica, San Serif;
+}
+section.content-center ul li a {
+  display: block;
+  color: #668134;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+section.content-center ul li a:hover {
+  text-decoration: underline;
 }
