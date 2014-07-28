@@ -6,11 +6,7 @@
 @import "compass/reset";
 @import "variables";
 
-$froggreen: #668134;
-$frogblack: #000000;
-$frogsans: Arial, "Helvetica Neue", Helvetica, San Serif;
-
-
+// Mixins
 @mixin froglinks($color) {
 
 	display: block;
@@ -25,15 +21,19 @@ $frogsans: Arial, "Helvetica Neue", Helvetica, San Serif;
 	}
 }
 
-@mixin h2 {
+// Placeholder Selectors
+%quarter-col {
+	margin: 0 24px;
+	width: 267px;
+	float: left;
+}
+
+// Main Styles
+h2 {
 	font-size: 20px;
 
 	color: $froggreen;
 	margin: 24px 0px;
-}
-
-h2 {
-	@include h2;
 }
 
 .above-header {
@@ -121,12 +121,6 @@ article {
 
 }
 
-%quarter-col {
-	margin: 0 24px;
-	width: 267px;
-	float: left;
-}
-
 section.content-center,
 section.content-right {
 	@extend %quarter-col;
@@ -159,7 +153,10 @@ section.content-right {
 		}
 
 		h3 {
-			@include h2;
+			font-size: 20px;
+
+			color: $froggreen;
+			margin: 24px 0px;
 		}
 	}
 	
