@@ -153,10 +153,8 @@ section.content-right {
 		}
 
 		h3 {
-			font-size: 20px;
-
-			color: $froggreen;
-			margin: 24px 0px;
+			@extend h2;
+			margin-bottom: 12px;
 		}
 	}
 	

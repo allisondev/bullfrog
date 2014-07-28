@@ -3,7 +3,7 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, section.content-right article h3, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -65,7 +65,7 @@ section.content-right {
   float: left;
 }
 
-h2 {
+h2, section.content-right article h3 {
   font-size: 20px;
   color: #668134;
   margin: 24px 0px;
@@ -160,9 +160,7 @@ section.content-right article p {
   font-size: 16px;
 }
 section.content-right article h3 {
-  font-size: 20px;
-  color: #668134;
-  margin: 24px 0px;
+  margin-bottom: 12px;
 }
 
 footer {
