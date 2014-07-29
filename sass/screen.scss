@@ -1,5 +1,8 @@
+@import "../jeet/index";
 @import "compass/reset";
+@import "compass";
 @import "variables";
+@import "breakpoint";
 
 // Mixins
 @mixin froglinks($color) {
@@ -14,9 +17,32 @@
 
 // Placeholder selectors
 %quarter-col {
-  margin: 0 24px;
-  width: 267px;
-  float: left;
+
+  // Uses Jeet's col() mixin
+  // col(1/4) means style as a column that takes up a quarter of the screen
+  @include col(1/4);
+
+  // Uses Compass' box-sizing to recalculate width when adding padding below
+  @include box-sizing(border-box);
+  padding: 0px;
+
+  // Uses Breakpoint
+  // At the medium width breakpoint, takes up 2 out of 4 columns on the page
+  @include breakpoint($breakpoint-medium-width) {
+    @include col(2/4);
+    padding: 12px;
+  }
+
+  // At the small width breakpoint, takes up 1 out of 1 column on the page (so the entire page's width)
+  @include breakpoint($breakpoint-small-width) {
+    @include col(1/1);
+    padding: 24px;
+  }
+
+  // The mixins above replace the following styles for a more fluid design
+  // margin: 0 24px;
+  // width: 267px;
+  // float: left;
 }
 
 // Main styles
@@ -31,8 +57,13 @@ h2 {
 }
 
 #page {
-  width: 1225px;
-  margin: 0 auto;
+  // The center() mixin is from jeet
+  // center(1225px) makes 1225px the max-width and center
+  @include center(1225px);
+
+  // The center(1225px) mixin replaces the following styles
+  // width: 1225px;
+  // margin: 0 auto;
 }
 
 #main-nav {
@@ -42,6 +73,11 @@ h2 {
     line-height: 40px;
     font-size: 14px;
     padding: 0 24px 0 24px;
+
+    @include breakpoint($breakpoint-small-width) {
+      padding: 0 12px 0 12px;
+    }
+
     &:hover {
       text-decoration: underline;
     }
@@ -52,16 +88,43 @@ header#top {
   padding: 50px 24px;
   background: $froggreen url("../images/bullfrog-header.png") no-repeat right center;
   margin-bottom: 48px;
+
+  @include breakpoint($breakpoint-medium-width) {
+    margin-bottom: 0;
+  }
+  
   .logo a {
     font-size: 72px;
     color: white;
     text-decoration: none;
+
+    @include breakpoint($breakpoint-small-width){
+      font-size: 48px;
+    }
   }
 }
 
 #content {
-  width: 578px;
-  float: left;
+  // Uses the Jeet mixin col() to give #content a column that is 2/4th width of the page
+  @include col(2/4);
+
+  // Uses Compass' box-sizing() mixin
+  // Box-sizing figures out the math when we add padding to the element, 
+  // and resize the width of the element.
+  @include box-sizing(border-box);
+
+  // Uses Breakpoint
+  // At the medium breakpoint (768px), #content will take up the entire page (1/1)
+  @include breakpoint($breakpoint-medium-width) {
+    @include col(1/1);
+
+     //Box-sizing above recalculate the width after adding padding
+    padding: 24px;
+  }
+
+  // Mixins above replace the code below for a more fluid design
+  // width: 578px;
+  // float: left;
 }
 
 article {

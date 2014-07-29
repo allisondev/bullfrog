@@ -1,3 +1,16 @@
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, section.content-right h3, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,9 +69,91 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 section.content-center,
 section.content-right {
-  margin: 0 24px;
-  width: 267px;
+  *zoom: 1;
   float: left;
+  clear: none;
+  text-align: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  width: 22.75%;
+  margin-left: 0%;
+  margin-right: 3%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px;
+}
+section.content-center:before,
+section.content-right:before, section.content-center:after,
+section.content-right:after {
+  content: '';
+  display: table;
+}
+section.content-center:after,
+section.content-right:after {
+  clear: both;
+}
+section.content-center:last-child,
+section.content-right:last-child {
+  margin-right: 0%;
+}
+@media (max-width: 768px) {
+  section.content-center,
+  section.content-right {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    padding-left: 0;
+    padding-right: 0;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
+    padding: 12px;
+  }
+  section.content-center:before,
+  section.content-right:before, section.content-center:after,
+  section.content-right:after {
+    content: '';
+    display: table;
+  }
+  section.content-center:after,
+  section.content-right:after {
+    clear: both;
+  }
+  section.content-center:last-child,
+  section.content-right:last-child {
+    margin-right: 0%;
+  }
+}
+@media (max-width: 400px) {
+  section.content-center,
+  section.content-right {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    padding: 24px;
+  }
+  section.content-center:before,
+  section.content-right:before, section.content-center:after,
+  section.content-right:after {
+    content: '';
+    display: table;
+  }
+  section.content-center:after,
+  section.content-right:after {
+    clear: both;
+  }
+  section.content-center:last-child,
+  section.content-right:last-child {
+    margin-right: 0%;
+  }
 }
 
 h2, section.content-right h3 {
@@ -72,8 +167,22 @@ h2, section.content-right h3 {
 }
 
 #page {
-  width: 1225px;
-  margin: 0 auto;
+  *zoom: 1;
+  width: auto;
+  max-width: 1225px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+#page:before, #page:after {
+  content: '';
+  display: table;
+}
+#page:after {
+  clear: both;
 }
 
 #main-nav a {
@@ -82,6 +191,11 @@ h2, section.content-right h3 {
   line-height: 40px;
   font-size: 14px;
   padding: 0 24px 0 24px;
+}
+@media (max-width: 400px) {
+  #main-nav a {
+    padding: 0 12px 0 12px;
+  }
 }
 #main-nav a:hover {
   text-decoration: underline;
@@ -92,15 +206,69 @@ header#top {
   background: #668134 url("../images/bullfrog-header.png") no-repeat right center;
   margin-bottom: 48px;
 }
+@media (max-width: 768px) {
+  header#top {
+    margin-bottom: 0;
+  }
+}
 header#top .logo a {
   font-size: 72px;
   color: white;
   text-decoration: none;
 }
+@media (max-width: 400px) {
+  header#top .logo a {
+    font-size: 48px;
+  }
+}
 
 #content {
-  width: 578px;
+  *zoom: 1;
   float: left;
+  clear: none;
+  text-align: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#content:before, #content:after {
+  content: '';
+  display: table;
+}
+#content:after {
+  clear: both;
+}
+#content:last-child {
+  margin-right: 0%;
+}
+@media (max-width: 768px) {
+  #content {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    padding: 24px;
+  }
+  #content:before, #content:after {
+    content: '';
+    display: table;
+  }
+  #content:after {
+    clear: both;
+  }
+  #content:last-child {
+    margin-right: 0%;
+  }
 }
 
 article {
