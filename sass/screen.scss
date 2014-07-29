@@ -42,7 +42,10 @@ h2 {
 }
 
 #page {
-	max-width: 1225px;
+
+	/* Fixed width web page, use max-width for a more fluid design */
+	width: 1225px;
+
 	margin: 0 auto;
 }
 
@@ -71,11 +74,9 @@ header#top{
 
  	font-family: Georgia;
  	font-size: 72px;
- 	
- 	height: 125px;
 
- 	margin-bottom: 32px;
- 	padding: 50px 0px 0px 25px;
+ 	margin-bottom: 48px;
+ 	padding: 50px 24px;
 
  	.logo a {
  		color: white;
