@@ -24,20 +24,21 @@
 
   // Uses Compass' box-sizing to recalculate width when adding padding below
   @include box-sizing(border-box);
-  padding: 0px;
+  padding: 2px 0.5px;
+
 
   // Uses Breakpoint
   // At the medium width breakpoint, takes up 2 out of 4 columns on the page
   @include breakpoint($breakpoint-medium-width) {
     @include col(2/4);
-    padding: 12px;
+    padding: 5px;
   }
 
   // At the small width breakpoint, takes up 1 out of 1 column on the page (so the entire page's width)
-  @include breakpoint($breakpoint-small-width) {
-    @include col(1/1);
-    padding: 24px;
-  }
+  // @include breakpoint($breakpoint-small-width) {
+  //   @include col(1/1);
+  //   padding: 10px;
+  // }
 
   // The mixins above replace the following styles for a more fluid design
   // margin: 0 24px;
@@ -45,11 +46,39 @@
   // float: left;
 }
 
+%half-col {
+  @include col(1/2);
+  @include box-sizing(border-box);
+  padding: 0 0px;
+
+
+  @include breakpoint($breakpoint-medium-width) {
+    @include col(1/1);
+    padding: 0 24px;
+  }
+
+}
+
+%full-col {
+  @include col(1/1);
+  @includ box-sizing(border-box);
+}
+
+.clicked-gray {
+  background: lightgray;
+}
+
+.unclicked-white {
+  background: white;
+}
+
+
 // Main styles
 h2 {
   font-size: 20px;
   color: $froggreen;
-  margin: 24px 0;
+
+  margin: 10px 0;
 }
 
 .above-header {
@@ -57,13 +86,10 @@ h2 {
 }
 
 #page {
-  // The center() mixin is from jeet
-  // center(1225px) makes 1225px the max-width and center
+  
+  // The center() mixin is from jeet, making 1225px the max-width
   @include center(1225px);
 
-  // The center(1225px) mixin replaces the following styles
-  // width: 1225px;
-  // margin: 0 auto;
 }
 
 #main-nav {
@@ -122,7 +148,7 @@ header#top {
     padding: 24px;
   }
 
-  // Resize horned-frog to fit in column
+  // Resize horned-frog to fit in its column
   #horned-frog {
     padding: 24px;
     width: 100%; 
@@ -133,47 +159,77 @@ header#top {
 article {
   font-size: 16px;
   line-height: 27px;
+  
   h1 {
     font-size: 36px;
     color: $froggreen;
     margin: 24px 0;
   }
+  
   p {
     font-family: $frogsans;
   }
 }
 
-section.content-center,
-section.content-right {
-  @extend %quarter-col;
-  a {
-    @include froglinks($froggreen);
-  }
-}
+section.other-content {
+  
+  @extend %half-col;
+  padding: 24px;
 
-section.content-center {
-  ul {
-    font-family: $frogsans;
-    li {
-      a {
-        @include froglinks($froggreen);
+  h2 a {
+    @extend %half-col;
+    padding: 5px 0;
+    margin: 5px;
+    
+    text-align: center;
+    text-decoration: none;
+    
+    color: $froggreen;
+    border: 1px solid lightgray;    
+  }
+
+  section.content-center,
+  section.content-right {
+    
+    @extend %full-col;
+    
+    a {
+      @include froglinks($froggreen);    
+    }
+
+  }
+
+  section.content-center {
+
+    ul {
+      margin-top: 24px;
+
+      font-family: $frogsans;
+
+      li {
+        a {
+          @include froglinks($froggreen);        
+        }
       }
     }
   }
-}
 
+  section.content-right {
 
-section.content-right {
-  article {
-    p {
-      font-size: 14px;
-      line-height: 20px;
+    article {
+ 
+      p {
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
-  }
-  h3 {
-    @extend h2;
-    margin-bottom: 12px;
-  }
+    
+    h3 {
+      @extend h2;
+      margin-bottom: 12px;
+    }
+}
+    
 }
 
 footer {

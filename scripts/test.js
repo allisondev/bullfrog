@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 	$('#main-nav').click(function(){
 		
-		//Show header when main-nav is clicked
+		//Show/hide header when main-nav is clicked
 		$('header').slideToggle(3000);
 		
 
