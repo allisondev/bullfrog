@@ -15,11 +15,10 @@
   }
 }
 
-// Placeholder selectors
+// Placeholder selectors for extends
 %quarter-col {
 
   // Uses Jeet's col() mixin
-  // col(1/4) means style as a column that takes up a quarter of the screen
   @include col(1/4);
 
   // Uses Compass' box-sizing to recalculate width when adding padding below
@@ -27,23 +26,11 @@
   padding: 2px 0.5px;
 
 
-  // Uses Breakpoint
-  // At the medium width breakpoint, takes up 2 out of 4 columns on the page
+  // Uses Breakpoint mixin
   @include breakpoint($breakpoint-medium-width) {
     @include col(2/4);
     padding: 5px;
   }
-
-  // At the small width breakpoint, takes up 1 out of 1 column on the page (so the entire page's width)
-  // @include breakpoint($breakpoint-small-width) {
-  //   @include col(1/1);
-  //   padding: 10px;
-  // }
-
-  // The mixins above replace the following styles for a more fluid design
-  // margin: 0 24px;
-  // width: 267px;
-  // float: left;
 }
 
 %half-col {
@@ -64,6 +51,7 @@
   @includ box-sizing(border-box);
 }
 
+// Classes for JavaScript
 .clicked-gray {
   background: lightgray;
 }
@@ -72,22 +60,13 @@
   background: white;
 }
 
-
-// Main styles
-h2 {
-  font-size: 20px;
-  color: $froggreen;
-
-  margin: 10px 0;
-}
-
+// Main Styles
 .above-header {
   background: $frogblack;
 }
 
 #page {
   
-  // The center() mixin is from jeet, making 1225px the max-width
   @include center(1225px);
 
 }
@@ -131,28 +110,28 @@ header#top {
 }
 
 #content {
-  // Uses the Jeet mixin col() to give #content a column that is 2/4th width of the page
+
   @include col(2/4);
-
-  // Uses Compass' box-sizing() mixin
-  // Box-sizing figures out the math when we add padding to the element, 
-  // and resize the width of the element.
   @include box-sizing(border-box);
+  padding: 24px;
 
-  // Uses Breakpoint
-  // At the medium breakpoint (768px), #content will take up the entire page (1/1)
   @include breakpoint($breakpoint-medium-width) {
     @include col(1/1);
-
-     //Box-sizing above recalculate the width after adding padding
     padding: 24px;
   }
 
   // Resize horned-frog to fit in its column
   #horned-frog {
-    padding: 24px;
     width: 100%; 
     @include box-sizing(border-box);
+
+    @include breakpoint($breakpoint-medium-width) {
+      padding: 0 20%;
+    }
+
+    @include breakpoint($breakpoint-small-width) {
+      padding: 0;
+    }
   }
 }
 
@@ -171,6 +150,13 @@ article {
   }
 }
 
+h2 {
+  font-size: 20px;
+  color: $froggreen;
+
+  margin: 10px 0;
+}
+
 section.other-content {
   
   @extend %half-col;
@@ -182,13 +168,6 @@ section.other-content {
     margin: 1%;
     padding: 1%;
 
-    // @include col(1/2);
-    // @include box-sizing(border-box);
-    // padding: 1% 0;
-    // margin: 2%;
-
-    // display: inline;
-    
     text-align: center;
     text-decoration: none;
     
