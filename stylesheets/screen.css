@@ -292,8 +292,8 @@ section.other-content {
   padding: 24px;
 }
 section.other-content h2 a, section.other-content section.content-right h3 a {
-  padding: 5px 0;
-  margin: 5px;
+  margin: 1%;
+  padding: 1%;
   text-align: center;
   text-decoration: none;
   color: #668134;
