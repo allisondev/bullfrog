@@ -122,9 +122,12 @@ header#top {
     padding: 24px;
   }
 
-  // Mixins above replace the code below for a more fluid design
-  // width: 578px;
-  // float: left;
+  // Resize horned-frog to fit in column
+  #horned-frog {
+    padding: 24px;
+    width: 100%; 
+    @include box-sizing(border-box);
+  }
 }
 
 article {
